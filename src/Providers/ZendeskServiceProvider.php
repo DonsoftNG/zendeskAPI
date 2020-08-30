@@ -8,6 +8,13 @@ use Illuminate\Support\ServiceProvider;
 
 class ZendeskServiceProvider extends ServiceProvider
 {
+
+    /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+    protected $defer = false;
     /**
      * Register services.
      *
@@ -17,12 +24,16 @@ class ZendeskServiceProvider extends ServiceProvider
     {
 
 
-        $source = realpath($raw =__DIR__.'/../../config/zendesk.php') ?: $raw;
+        $packageName = 'zendesk';
+        $configPath = __DIR__.'/../../config/zendesk.php';
 
-        $this->publishes([$source => config_path('zendesk.php')]);
+        $this->mergeConfigFrom(
+            $configPath, $packageName
+        );
 
-        $this->mergeConfigFrom($source, 'zendesk');
-
+        $this->publishes([
+            $configPath => config_path(sprintf('%s.php', $packageName)),
+        ]);
 
 
     }
