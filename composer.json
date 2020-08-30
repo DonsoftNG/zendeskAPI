@@ -18,5 +18,12 @@
             "Donsoft\\Zendesk\\": "src"
         }
 
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Donsoft\\Zendesk\\Providers\\ZendeskServiceProvider"
+            ]
+        }
     }
 }
