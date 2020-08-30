@@ -1,0 +1,22 @@
+{
+    "name": "donsoft/zendesk",
+    "description": "Zendesk APIs for tickets,end users,users etc.",
+    "type": "library",
+    "require": {
+        "zendesk/zendesk_api_client_php": "dev-master"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mkparu Chisom",
+            "email": "mkparuchisom@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Donsoft\\Zendesk\\": "src"
+        }
+
+    }
+}
